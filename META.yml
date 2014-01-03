@@ -23,4 +23,4 @@ requires:
   Mojo::UserAgent: 0
   Surveyor::App: 0
   Test::More: 0
-version: 1.01
+version: 1.02

@@ -5,7 +5,7 @@ use warnings;
 use subs qw();
 use vars qw($VERSION $HTML);
 
-$VERSION = '1.01';
+$VERSION = '1.02';
 
 use HTML::Entities;
 use HTML::Escape;
@@ -75,9 +75,10 @@ sub set_up {
 	$counts{'<'} = $HTML =~ tr/<//;
 	$counts{'&'} = $HTML =~ tr/&//;
 	$counts{"'"} = $HTML =~ tr/'//;
+	$counts{'"'} = $HTML =~ tr/"//;
 
-	printf "> (%d)\n< (%d)\n& (%d)\n' (%d)\n",
-		@counts{ qw(> < & ') };
+	printf qq(> (%d)\n< (%d)\n& (%d)\n' (%d)\n" (%d)\n),
+		@counts{ qw(> < & ' ") };
 	}
 	
 =item tear_down
